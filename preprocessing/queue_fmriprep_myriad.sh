@@ -4,8 +4,9 @@ d0=$PWD
 
 ##### EDIT FROM HERE 
 
-# e.g. /home/user/Scratch/MMPD/MRI_DATA/raw_data/3T/
-rawDataDir=/home/zcqsgth/Scratch/MMPD/MRI_DATA/raw_data_fmriprep/3T/
+# e.g. /home/user/Scratch/MMPD/MRI_DATA/raw_data/3T/ 
+# may need to replace ~ with /home/user/
+rawDataDir=~/Scratch/MMPD/MRI_DATA/raw_data_fmriprep/3T/
 
 #### TO HERE
 
