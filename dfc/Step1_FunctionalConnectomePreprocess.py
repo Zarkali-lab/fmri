@@ -10,6 +10,8 @@
 ## -atlas: atlas path (nifti image in MNIspace)
 ## -n: number of regions in the parcellation
 ## -subs: subject_list (txt file of included subjects, assumes BIDS compatible format and no "sub" pre-fix)
+### EXAMPLE HARD-CODED SHARED-DRIVE PATH (documentation only): replace for your site;
+### actual source folder is provided with -i.
 ### For windows paths to shared drives format is: '//rdp.arc.ucl.ac.uk/ritd-ag-project-rd00hy-rswei70/DLB/FMRI/fmriprep' or include r before path
 
 # OUTPUTS in the output_folder:
@@ -108,8 +110,9 @@ np.save(array_path, allts)
 # Save for melodic 
 S, W, R = allts.shape
 ts2d = allts.reshape(S * W, R)  # shape (timepoints, ROIs)
-ts_path = output_folder / str("Timeseries_array_" + str(num_regions) + "melocid.txt")
-np.savetxt('melodic_input.txt', ts2d)
+# Save to the user-supplied output directory (-o), not the process working directory.
+ts_path = output_folder / str("Timeseries_array_" + str(num_regions) + "_melodic.txt")
+np.savetxt(ts_path, ts2d)
 
 correlation_measure = ConnectivityMeasure(cov_estimator=EmpiricalCovariance(), kind="correlation", standardize="zscore_sample")
 ## Compute correlation matrix
