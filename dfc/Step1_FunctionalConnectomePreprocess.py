@@ -110,8 +110,9 @@ np.save(array_path, allts)
 # Save for melodic 
 S, W, R = allts.shape
 ts2d = allts.reshape(S * W, R)  # shape (timepoints, ROIs)
-ts_path = output_folder / str("Timeseries_array_" + str(num_regions) + "melocid.txt")
-np.savetxt('melodic_input.txt', ts2d)
+# Save to the user-supplied output directory (-o), not the process working directory.
+ts_path = output_folder / str("Timeseries_array_" + str(num_regions) + "_melodic.txt")
+np.savetxt(ts_path, ts2d)
 
 correlation_measure = ConnectivityMeasure(cov_estimator=EmpiricalCovariance(), kind="correlation", standardize="zscore_sample")
 ## Compute correlation matrix
