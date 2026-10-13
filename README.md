@@ -27,3 +27,11 @@ $ python <script>.py --help
 ##### ANALYSIS B) LEIDA
 **STEP 2b:**
 - Get Phase and Synchronicity Matrices
+
+## Participant lists and data paths
+
+The `dfc` Python steps accepting `-subs` already load participant identifiers from an external text file. Create a local `participants.txt` with one participant pseudocode per line (without `sub-` prefix), then pass `-subs participants.txt` to each relevant step. Do not commit this file.
+
+Input and output file paths for `dfc` scripts are supplied via command-line arguments such as `-i`, `-o` and `-atlas`, not embedded site-specific directories.
+
+The `preprocessing/*myriad.sh` scripts use **hard-coded Myriad paths** marked `HARD-CODED MYRIAD PATH`. Replace them for your cluster account before running. Existing path strings have deliberately been left unchanged. The fMRIPrep script's quoted `~` log paths also need correction before use.
