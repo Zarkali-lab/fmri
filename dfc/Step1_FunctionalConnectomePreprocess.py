@@ -10,6 +10,8 @@
 ## -atlas: atlas path (nifti image in MNIspace)
 ## -n: number of regions in the parcellation
 ## -subs: subject_list (txt file of included subjects, assumes BIDS compatible format and no "sub" pre-fix)
+### EXAMPLE HARD-CODED SHARED-DRIVE PATH (documentation only): replace for your site;
+### actual source folder is provided with -i.
 ### For windows paths to shared drives format is: '//rdp.arc.ucl.ac.uk/ritd-ag-project-rd00hy-rswei70/DLB/FMRI/fmriprep' or include r before path
 
 # OUTPUTS in the output_folder:
